@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import WeManage from "@components/WeManage";
 
 export default function Home() {
   return (
-    <div>
-      
-    </div>
+    <main className="relative">
+      <Navbar/>
+      <Hero/>
+      <WeManage/>
+    </main>
   );
 }
