@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WeManage from "@components/WeManage";
+import ContactUs from "@components/ContactUs";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar/>
       <Hero/>
       <WeManage/>
+      <ContactUs/>
     </main>
   );
 }
