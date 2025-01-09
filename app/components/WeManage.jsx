@@ -34,8 +34,8 @@ const WeManage = () => {
             <h1 className="text-black text-3xl md:text-4xl xl:text-5xl font-semibold max-w-3xl mx-auto mb-16 leading-snug">Services Built Specifically for your Business</h1>
             <div className="grid-offer text-left grid sm:grid-cols-2 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
                 {
-                    brands.map((item) => {
-                        return <WeManageCard brand={item} />
+                    brands.map((item,index) => {
+                        return <WeManageCard key={index} brand={item} />
                     })
                 }
             </div>
