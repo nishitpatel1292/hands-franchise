@@ -1,39 +1,87 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 const videos = [
-  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+  '/videos/hocco-eatery.mp4',
+  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
 ];
 
-export default function VideoSlider() {
-  const [currentVideo, setCurrentVideo] = useState(0);
+export default function VideoSlider2() {
+  const swiperRef = useRef(null);
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<div class="h-[2px] w-8 ' + className + '">' + '</div>';
+    },
+  };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length);
-    }, 6000);
+  const handleVideoEnd = () => {
+    console.log('here')
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext(); 
+      console.log(swiperRef.current.swiper,'ji')// Move to the next slide
+    } else {
+      console.error("Swiper reference is not available");
+    }
+  }
+    return (
+      // <div className="relative w-full h-full overflow-hidden">
+      <>
+        <div className='absolute w-full h-full'>
+          <Swiper
+            style={{
+              "--swiper-pagination-color": "#FFF",
+              "--swiper-pagination-bullet-inactive-color": "#BBB",
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              "--swiper-pagination-bullet-height": "4px",
+              "--swiper-pagination-bullet-width": "32px",
+              "--swiper-pagination-bullet-horizontal-gap": "6px",
+              "--swiper-pagination-bullet-border-radius": "5px",
+            }}
+            ref={swiperRef}
+            loop={true}
+            autoplay={{
+              delay: 10000,
+              disableOnInteraction: false,
+            }}
+            pagination={pagination}
+            navigation={true}
+            speed={1000}
+            modules={[Autoplay, Navigation, Pagination]}
+            className="w-full h-full"
+          >
+            {videos.map((video, index) => (
+              <SwiperSlide key={index} className='w-full h-full'>
+                <video
+                  src={video}
+                  autoPlay
+                  loop
+                  muted
+                  disablePictureInPicture
+                  onEnded={()=>{handleVideoEnd()}}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 z-10" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden">
-      {videos.map((video, index) => (
-        <video
-          key={index}
-          src={video}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentVideo ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
-      ))}
-      <div className="absolute inset-0 bg-black/50" />
-    </div>
-  );
-}
+          {/* <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 pb-4 z-10">
+          {videos.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1 w-8 ${index === currentVideo ? 'bg-gray-300' : 'bg-gray-500'}`}
+            />
+          ))}
+        </div> */}
+        </div>
+      </>
+      // </div>
+    );
+  }

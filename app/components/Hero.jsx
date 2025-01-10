@@ -1,12 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import VideoSlider from './VideoSlider';
-import VideoSlider2 from './VideoSlider2';
 
 export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center hero-section">
-      <VideoSlider2 />
+      <VideoSlider />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
