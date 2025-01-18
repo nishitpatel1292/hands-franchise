@@ -1,11 +1,12 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import { Doughnut } from 'react-chartjs-2'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import Image from 'next/image'
-import ChartDataLabels from 'chartjs-plugin-datalabels'
-
-ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels)
+"use client";
+import React, { useEffect, useState } from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import Image from "next/image";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import { History, Store } from "lucide-react";
+import EmployeesIcon from "../../public/svgs/employees.svg";
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 function Counter({ end, duration }) {
   const [count, setCount] = useState(0);
 
@@ -28,15 +29,20 @@ function Counter({ end, duration }) {
 }
 export default function AboutUs() {
   const brandData = {
-    labels: ['Hocco Ice-cream', 'Hocco Eatery', 'Chhaswala', 'Pigeon Kitchenware'],
+    labels: [
+      "Hocco Ice-cream",
+      "Hocco Eatery",
+      "Chhaswala",
+      "Pigeon Kitchenware",
+    ],
     datasets: [
       {
-        data: [4, 2.5, 2.5, 2],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
-        hoverBackgroundColor: ['#FF7394', '#46B2FB', '#FFDE66', '#5BD0D0']
-      }
-    ]
-  }
+        data: [6, 5, 1, 1],
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
+        hoverBackgroundColor: ["#FF7394", "#46B2FB", "#FFDE66", "#5BD0D0"],
+      },
+    ],
+  };
 
   const chartOptions = {
     responsive: true,
@@ -47,96 +53,130 @@ export default function AboutUs() {
     plugins: {
       legend: {
         display: true,
-        position: 'right'
+        position: "right",
       },
       datalabels: {
-        color: '#ffffff',
+        color: "#ffffff",
         font: {
           size: 14,
-          weight: 'bold',
+          weight: "bold",
         },
         formatter: (value, context) => {
           const label = context.chart.data.labels[context.dataIndex];
           return `${value}Cr`;
         },
-        anchor: 'center',
-        align: 'center',
+        anchor: "center",
+        align: "center",
         offset: 10,
         clip: false,
       },
     },
     onResize: (chart) => {
       if (window.innerWidth <= 1280) {
-        chart.options.plugins.legend.position = 'bottom'; // Set legend to 'bottom' for small screens
+        chart.options.plugins.legend.position = "bottom"; // Set legend to 'bottom' for small screens
       } else {
-        chart.options.plugins.legend.position = 'right'; // Set legend to 'right' for larger screens
+        chart.options.plugins.legend.position = "right"; // Set legend to 'right' for larger screens
       }
       chart.update(); // Update the chart with the new legend position
     },
   };
 
-
   return (
     <section className="py-20 bg-[rgb(3,4,94)]/[1]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl xl:text-5xl font-semibold text-center mb-12 text-white">
-          About Our Franchise Empire
-        </h2>
+        <div className="flex flex-col justify-center">
+          <span className="tracking-[.5em] uppercase text-white text-lg max-w-lg mx-auto mb-3  flex items-center">
+            About us
+          </span>
+          <h1 className="text-white text-3xl md:text-4xl xl:text-5xl font-semibold max-w-3xl mx-auto mb-16 leading-snug">
+            About Our Franchise Empire
+          </h1>
+        </div>
         <div className="lg:mx-40 grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
             <p className="text-xl text-slate-400 leading-relaxed">
-              We are a dynamic franchise powerhouse managing four distinct brands, each contributing to our remarkable success story. With unwavering commitment to excellence and innovation, we've achieved extraordinary growth and established a formidable presence in the market.
+              We are a dynamic franchise powerhouse managing four distinct
+              brands, each contributing to our remarkable success story. With
+              unwavering commitment to excellence and innovation, we've achieved
+              extraordinary growth and established a formidable presence in the
+              market.
             </p>
 
             {/* <p className="text-xl text-slate-400 leading-relaxed">
               Our diverse portfolio enables us to cater to a wide spectrum of customer needs while maintaining a cohesive and strategic business approach. We take immense pride in our ability to adapt swiftly to market trends and deliver unparalleled value to both our franchisees and customers.
             </p> */}
-            <button className='primary-button'>Know more</button>
+            <button className="primary-button sm:block hidden">
+              Know more
+            </button>
           </div>
-          <div className="md:h-96 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-lg p-6 text-center shadow-lg">
-              <div className="text-slate-400 mb-4">
-                <svg className="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.104.004 2-.896 2-2 0-1.104-.896-2-2-2s-2 .896-2 2c0 1.104.896 2 2 2zm0 4c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z" />
+          <div className="md:h-96 grid grid-cols-1 sm:grid-cols-2 about-us-figures-container">
+            <div className="figure-card p-6 text-center">
+              <div className="text-slate-400 text-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-12 h-12 mx-auto lucide lucide-hand-coins"
+                >
+                  <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
+                  <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
+                  <path d="m2 16 6 6" />
+                  <circle cx="16" cy="9" r="2.9" />
+                  <circle cx="6" cy="5" r="3" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-slate-300">
-                <Counter end={6} duration={2} />Cr+
-              </h3>
-              <p className="text-xl text-slate-400">Yearly turnover</p>
+              <div className="figure-card-content">
+                <h3 className="text-2xl font-semibold text-slate-300">
+                  <Counter end={13} duration={2} />
+                  Cr+
+                </h3>
+                <p className="text-xl text-slate-400">Yearly turnover</p>
+              </div>
             </div>
-            <div className="rounded-lg p-6 text-center shadow-lg">
+            <div className="figure-card p-6 text-center">
               <div className="text-slate-400 mb-4">
-                <svg className="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.104.004 2-.896 2-2 0-1.104-.896-2-2-2s-2 .896-2 2c0 1.104.896 2 2 2zm0 4c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z" />
-                </svg>
+                <Store size={"3rem"} className="mx-auto" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-300">
-                <Counter end={4} duration={2} />+
-              </h3>
-              <p className="text-xl text-slate-400">Franchises</p>
+              <div className="figure-card-content">
+                <h3 className="text-2xl font-semibold text-slate-300">
+                  <Counter end={4} duration={2} />+
+                </h3>
+                <p className="text-xl text-slate-400">Franchises</p>
+              </div>
             </div>
-            <div className="rounded-lg p-6 text-center shadow-lg">
+            <div className="figure-card p-6 text-center">
               <div className="text-slate-400 mb-4">
-                <svg className="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.104.004 2-.896 2-2 0-1.104-.896-2-2-2s-2 .896-2 2c0 1.104.896 2 2 2zm0 4c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z" />
-                </svg>
+                <History size={"3rem"} className="mx-auto" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-300">
-                <Counter end={10} duration={2} />+
-              </h3>
-              <p className="text-xl text-slate-400">Years of Experience</p>
+              <div className="figure-card-content">
+                <h3 className="text-2xl font-semibold text-slate-300">
+                  <Counter end={10} duration={2} />+
+                </h3>
+                <p className="text-xl text-slate-400">Years of Experience</p>
+              </div>
             </div>
-            <div className="rounded-lg p-6 text-center shadow-lg">
+            <div className="figure-card p-6 text-center">
               <div className="text-slate-400 mb-4">
-                <svg className="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.104.004 2-.896 2-2 0-1.104-.896-2-2-2s-2 .896-2 2c0 1.104.896 2 2 2zm0 4c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z" />
-                </svg>
+                <Image
+                alt=""
+                  src={"/svgs/employees.svg"}
+                  width={48}
+                  height={48}
+                  className="mx-auto"
+                />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-300">
-                <Counter end={20} duration={2} />+
-              </h3>
-              <p className="text-xl text-slate-400">Employees</p>
+              <div className="figure-card-content">
+                <h3 className="text-2xl font-semibold text-slate-300">
+                  <Counter end={20} duration={2} />+
+                </h3>
+                <p className="text-xl text-slate-400">Employees</p>
+              </div>
             </div>
           </div>
         </div>
@@ -145,15 +185,20 @@ export default function AboutUs() {
             <Doughnut data={brandData} options={chartOptions} />
           </div>
           <div className="space-y-6">
-            <h3 className="text-3xl font-semibold text-slate-200">Our Brand Distribution</h3>
+            <h3 className="text-3xl font-semibold text-slate-200">
+              Our Brand Distribution
+            </h3>
             <p className="text-xl text-slate-400 leading-relaxed text-wrap w-full">
-              Our success is built on the strength of our four unique brands. Each brand has been carefully cultivated to meet specific market needs, contributing to our overall growth and market dominance.
+              Our success is built on the strength of our four unique brands.
+              Each brand has been carefully cultivated to meet specific market
+              needs, contributing to our overall growth and market dominance.
             </p>
+          </div>
+          <div className="block sm:hidden order-3">
+            <button className="primary-button">Know more</button>
           </div>
         </div>
       </div>
     </section>
-
-  )
+  );
 }
-
