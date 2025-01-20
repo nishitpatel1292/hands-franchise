@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function WeManageCard({brand}) {
     return (
         <>
-            <a href="#" className="group relative block bg-black">
+            <a href={`${brand.slug}`} className="group relative block bg-black">
                 <img
                     alt=""
                     src={brand.imageUrl}
@@ -25,6 +26,7 @@ export default function WeManageCard({brand}) {
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
                                 quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
                             </p>
+                            <button className='white-button text-black mt-2' href={`${brand.slug}`}>Know More</button>
                         </div>
                     </div>
                 </div>

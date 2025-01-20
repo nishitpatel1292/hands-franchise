@@ -47,6 +47,22 @@ body {
   background: #2563eb;
 }
 
+.white-button{
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  /* border-radius: 2px; */
+  transition: all 150ms;
+}
+.white-button:hover{
+  transform: translateY(-10%);
+  background-color: black;
+  color: white !important;
+}
+
 @media (min-width: 640px){
   .about-us-figures-container > div{
     border: 1px solid transparent;

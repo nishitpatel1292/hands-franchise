@@ -82,7 +82,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="py-20 bg-[rgb(3,4,94)]/[1]">
+    <section className="relative py-20 bg-[rgb(3,4,94)]/[1] z-10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col justify-center">
           <span className="tracking-[.5em] uppercase text-white text-lg max-w-lg mx-auto mb-3  flex items-center">
@@ -101,7 +101,6 @@ export default function AboutUs() {
               extraordinary growth and established a formidable presence in the
               market.
             </p>
-
             {/* <p className="text-xl text-slate-400 leading-relaxed">
               Our diverse portfolio enables us to cater to a wide spectrum of customer needs while maintaining a cohesive and strategic business approach. We take immense pride in our ability to adapt swiftly to market trends and deliver unparalleled value to both our franchisees and customers.
             </p> */}
