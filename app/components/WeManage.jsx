@@ -7,28 +7,28 @@ const brands = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
     imageUrl: "/brands/hocco-eatery.png",
-    slug: "/brands/hoccoEatery"
+    slug: "hoccoEatery"
   },
   {
     name: "hocco ice-cream distributor",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
     imageUrl: "/brands/hocco-ice-cream.jpg",
-    slug: "/brands/hoccoIcecream"
+    slug: "hoccoIcecream"
   },
   {
     name: "chhaswala",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
     imageUrl: "/brands/chhaswala.jpg",
-    slug: "brands/chhaswala"
+    slug: "chhaswala"
   },
   {
     name: "Pigeon Kitchenware",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
     imageUrl: "/brands/pigeon.jpg",
-    slug: "brands/Pigeon"
+    slug: "pigeon"
   },
 ];
 

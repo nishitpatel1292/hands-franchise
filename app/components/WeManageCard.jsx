@@ -4,7 +4,7 @@ import React from 'react'
 export default function WeManageCard({brand}) {
     return (
         <>
-            <a href={`${brand.slug}`} className="group relative block bg-black">
+            <a href={`/brands/${brand.slug}`} className="group relative block bg-black">
                 <img
                     alt=""
                     src={brand.imageUrl}

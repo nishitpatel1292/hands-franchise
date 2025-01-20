@@ -25,6 +25,11 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleRedirect = (path) => {
+    router.push(path);
+    setIsMenuOpen(false); // Close the menu after redirect
+  };
+
   return (
     <nav
       className={`fixed w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
@@ -53,7 +58,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href={'#aboutus'}
+              href={'/#aboutus'}
               className={` ${
                 isScrolled
                   ? "text-black hover:text-blue-600"
@@ -63,7 +68,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href={'#aboutus'}
+              href={'/#contactus'}
               className={`transition-colors ${
                 isScrolled
                   ? "text-black hover:text-blue-600"

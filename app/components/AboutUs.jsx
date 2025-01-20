@@ -82,7 +82,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="relative py-20 bg-[rgb(3,4,94)]/[1] z-10">
+    <section id='aboutus' className="relative md:pt-24 py-20 bg-[rgb(3,4,94)]/[1] z-10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col justify-center">
           <span className="tracking-[.5em] uppercase text-white text-lg max-w-lg mx-auto mb-3  flex items-center">
@@ -155,7 +155,7 @@ export default function AboutUs() {
               </div>
               <div className="figure-card-content">
                 <h3 className="text-2xl font-semibold text-slate-300">
-                  <Counter end={10} duration={2} />+
+                  <Counter end={2} duration={2} />+
                 </h3>
                 <p className="text-xl text-slate-400">Years of Experience</p>
               </div>

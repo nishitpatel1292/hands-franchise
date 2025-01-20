@@ -1,26 +1,13 @@
-// "use client";
-// import Image from "next/image";
-// import { useParams } from "next/navigation";
-
-// const Franchise = () => {
-//   const { slugs } = useParams();
-
-//   return (
-//     <div className="relative min-h-[80vh]">
-//       <div className="absolute w-full h-full -z-1">
-//         <Image src='/franchises/hocco eatery/hocco_eatery_1.jpg' width={500} height={500} alt='hocco eatery image' className="w-full h-full"/>
-//       </div>
-//       <h1>Welcome to the {slugs} Franchise</h1>
-//       <p>This is the landing page for the {slugs} franchise.</p>
-//     </div>
-//   );
-// };
-
-// export default Franchise;
 "use client";
 import React from "react";
 import { useParams } from "next/navigation";
-import { MapPin, DollarSign, Users, TrendingUp } from "lucide-react";
+import {
+  DollarSign,
+  Users,
+  TrendingUp,
+  Calendar1Icon,
+  IndianRupee,
+} from "lucide-react";
 import Image from "next/image";
 
 // Mock data - in a real app, this would come from an API
@@ -29,19 +16,62 @@ const franchiseData = {
     name: "Hocco Eatery",
     hero: "/brands/hocco-eatery.png",
     description: "India's fastest growing fastfood chain",
-    locations: "40,000+ locations worldwide",
-    investment: "$150K - $350K",
-    revenue: "$400K average annual revenue",
-    employeeCount: "8-15 per location",
-    gallery: [
-      "https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1485451456034-3f9391c6f769?auto=format&fit=crop&q=80&w=1000",
-      "https://images.unsplash.com/photo-1511689660979-10d2b1aada49?auto=format&fit=crop&q=80&w=1000",
+    yearsManaged: "2.5Yrs+",
+    investment: "₹2Cr",
+    revenue: "₹5Cr average annual turnover",
+    employeeCount: "4-5 per location",
+    locations: [
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.6319891508265!2d72.5061748!3d23.0005564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bd5f9a646db%3A0x5ff37f40cb89fa8b!2sHocco%20Eatery!5e0!3m2!1sen!2sin!4v1737394136379!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58694.16674258091!2d72.59302097977942!3d23.15612909431003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8194a7411881%3A0x739b636940d1ddaa!2shocco%20eatry!5e0!3m2!1sen!2sin!4v1737394656651!5m2!1sen!2sin",
     ],
-    locations_data: [
-      { lat: 51.5074, lng: -0.1278, name: "London" },
-      { lat: 48.8566, lng: 2.3522, name: "Paris" },
-      { lat: 40.4168, lng: -3.7038, name: "Madrid" },
+    gallery: [
+      "/franchises/hocco eatery/hocco_eatery_1.jpg",
+      "/franchises/hocco eatery/hocco_eatery_2.jpg",
+      "/franchises/hocco eatery/hocco_eatery_3.jpg",
+      "/franchises/hocco eatery/hocco_eatery_4.jpg",
+      "/franchises/hocco eatery/hocco_eatery_5.jpg",
+      "/franchises/hocco eatery/hocco_eatery_6.jpg",
+    ],
+  },
+  hoccoIcecream: {
+    name: "Hocco Icecream",
+    hero: "/brands/hocco-ice-cream.jpg",
+    description:
+      "We are the distributors of India's fastest growing icecream chain.",
+    yearsManaged: "1.2Yrs+",
+    locations: "1 location (Ahmedabad)",
+    investment: "₹2Cr - ₹3Cr",
+    revenue: "₹6Cr average annual turnover",
+    employeeCount: "2-3 per location",
+    gallery: ["/franchises/hocco icecream/hocco_icecream.jpg"],
+  },
+  chhaswala: {
+    name: "Chhaswala",
+    hero: "/brands/chhaswala.jpg",
+    description: "India's fast growing dairy brand",
+    yearsManaged: "5Months+",
+    locations: "1 location (Ahmedabad)",
+    investment: "₹150K - ₹350K",
+    revenue: "₹1Cr average annual turnover",
+    employeeCount: "2 per location",
+    gallery: [
+      "/franchises/pigeon/Pigeon_inside.jpg",
+      "/franchises/pigeon/Pigeon.jpg",
+    ],
+  },
+  pigeon: {
+    name: "Pigeon",
+    hero: "/brands/pigeon-2.jpg",
+    description:
+      "Pigeon is a Leader in cookware, home and kitchen appliances products across multiple categories",
+    yearsManaged: "4Months+",
+    locations: "1 location",
+    investment: "₹500K - ₹550K",
+    revenue: "₹1Cr average annual turnover",
+    employeeCount: "3-4 per location",
+    gallery: [
+      "/franchises/pigeon/Pigeon_inside.jpg",
+      "/franchises/pigeon/Pigeon.jpg",
     ],
   },
 };
@@ -52,8 +82,10 @@ const mapContainerStyle = {
 };
 
 function FranchisePage() {
-    const { slug } = useParams();
-  const franchise = franchiseData["hoccoEatery"];
+  const { slugs } = useParams();
+
+  console.log(slugs, "slug");
+  const franchise = franchiseData[slugs];
 
   if (!franchise) {
     return (
@@ -62,8 +94,6 @@ function FranchisePage() {
       </div>
     );
   }
-
-  const center = franchise.locations_data[0];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -81,7 +111,9 @@ function FranchisePage() {
         </div>
         <div className="relative h-full flex items-center justify-center text-center">
           <div className="text-white px-4">
-            <h1 className="text-5xl font-bold mb-4">{franchise.name}</h1>
+            <h1 className="text-5xl tracking-[.1em] font-bold mb-4 uppercase text-blue-400">
+              {franchise.name}
+            </h1>
             <p className="text-xl max-w-2xl mx-auto">{franchise.description}</p>
           </div>
         </div>
@@ -91,12 +123,12 @@ function FranchisePage() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <MapPin className="w-8 h-8 text-blue-500 mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Locations</h3>
-            <p className="text-gray-600">{franchise.locations}</p>
+            <Calendar1Icon className="w-8 h-8 text-blue-500 mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Years Managed</h3>
+            <p className="text-gray-600">{franchise.yearsManaged}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <DollarSign className="w-8 h-8 text-green-500 mb-4" />
+            <IndianRupee className="w-8 h-8 text-green-500 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Investment Required</h3>
             <p className="text-gray-600">{franchise.investment}</p>
           </div>
@@ -114,23 +146,31 @@ function FranchisePage() {
       </div>
 
       {/* Locations Map Section */}
-      {/* <div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Our Locations</h2>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <iframe
-            id="iframeid"
-            width="450"
-            height="250"
-            // style="border:0"
-            src="https://www.google.com/maps/dir/?api=1&origin=Space+Needle+Seattle+WA&destination=Pike+Place+Market+Seattle+WA&travelmode=bicycling"
-          ></iframe>
+        <div className="flex flex-col gap-4">
+          {franchise.locations.map((item, idx) => (
+            <>
+              <a href="https://www.google.com" rel="noreferrer" key={idx}>
+                <div className="bg-white p-4 rounded-lg shadow-md h-[50vh]" >
+                  <iframe
+                    src={item}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+              </a>
+            </>
+          ))}
         </div>
-      </div> */}
+      </div>
 
       {/* Gallery Section */}
       <div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {franchise.gallery.map((image, index) => (
             <div
               key={index}

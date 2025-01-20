@@ -8,8 +8,10 @@ import 'swiper/css/pagination';
 
 
 const videos = [
+  '/videos/hocco-icecream.mp4',
+  '/videos/hero-burger.mp4',
+  '/videos/pigeon.mp4',
   '/videos/hocco-eatery.mp4',
-  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
 ];
 
 export default function VideoSlider2() {
