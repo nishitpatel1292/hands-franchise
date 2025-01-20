@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactUs() {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <div className="flex flex-col justify-center">
           <span className="tracking-[.5em] uppercase text-white text-lg max-w-lg mx-auto mb-3  flex items-center">
