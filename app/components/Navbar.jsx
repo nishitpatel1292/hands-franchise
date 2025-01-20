@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href="#"
+              href={'#aboutus'}
               className={` ${
                 isScrolled
                   ? "text-black hover:text-blue-600"
@@ -63,7 +63,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="#"
+              href={'#aboutus'}
               className={`transition-colors ${
                 isScrolled
                   ? "text-black hover:text-blue-600"
@@ -109,18 +109,18 @@ export default function Navbar() {
           } bg-white`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#"
+            <Link
+              href={'/#aboutus'}
               className="block px-3 py-2 text-black hover:text-blue-600 transition-colors"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href={'/#contactus'}
               className="block px-3 py-2 text-black hover:text-blue-600 transition-colors"
             >
               Contact
-            </a>
+            </Link>
             <button className="w-full text-center bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
               Get Started
             </button>
