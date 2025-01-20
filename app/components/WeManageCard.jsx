@@ -20,7 +20,7 @@ export default function WeManageCard({brand}) {
 
                     <div className="mt-32 sm:mt-48 lg:mt-64">
                         <div
-                            className="translate-y-8 transform opacity-100 md:opacity-0 transition-all group-hover:translate-y-0 md:group-hover:opacity-100"
+                            className="md:translate-y-8 transform opacity-100 md:opacity-0 transition-all md:group-hover:translate-y-0 md:group-hover:opacity-100"
                         >
                             <p className="text-sm text-white">
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
