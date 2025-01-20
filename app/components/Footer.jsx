@@ -4,6 +4,8 @@ import {
   FacebookIcon,
   Instagram,
   LucideFacebook,
+  MailPlusIcon,
+  Phone,
   Youtube,
 } from "lucide-react";
 import React from "react";
@@ -39,27 +41,18 @@ export default function Footer() {
             </p>
             <div className="flex mt-3 sm:mb-2 -mx-2 order-1 sm:order-2">
               <a
-                href="#"
+                href="mailto:nishitp59@gmail.com"
                 className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
                 aria-label="Facebook"
               >
-                <Facebook className="hover:text-blue-500 transition-transform transform hover:scale-110" />
+                <MailPlusIcon className="hover:text-blue-500 transition-transform transform hover:scale-110" />
               </a>
-
               <a
-                href="#"
+                href="tel:+9313382301"
                 className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
-                aria-label="Twitter"
+                aria-label="Facebook"
               >
-                <Instagram className="hover:text-pink-500 transition-transform transform hover:scale-110" />
-              </a>
-
-              <a
-                href="#"
-                className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-red-500 dark:hover:text-gray-300"
-                aria-label="Instagram"
-              >
-                <Youtube className="hover:text-red-500 transition-transform transform hover:scale-110" />
+                <Phone className="hover:text-blue-500 transition-transform transform hover:scale-110" />
               </a>
             </div>
           </div>
