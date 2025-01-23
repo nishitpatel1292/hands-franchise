@@ -23,8 +23,7 @@ export default function WeManageCard({brand}) {
                             className="md:translate-y-8 transform opacity-100 md:opacity-0 transition-all md:group-hover:translate-y-0 md:group-hover:opacity-100"
                         >
                             <p className="text-sm text-white">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                                {brand.description}
                             </p>
                             <button className='white-button text-black mt-2' href={`${brand.slug}`}>Know More</button>
                         </div>

@@ -39,7 +39,7 @@ const franchiseData = {
     description:
       "We are the distributors of India's fastest growing icecream chain.",
     yearsManaged: "1.2Yrs+",
-    locations: "1 location (Ahmedabad)",
+    locations: ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117524.7896871604!2d72.3536168972656!3d22.99990630000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b00149f940d%3A0x7f561de6c03092fb!2sH%20%26%20S%20FRANCHISES%20DIST_%20HOCCO%20ICE%20CREAM!5e0!3m2!1sen!2sin!4v1737611430160!5m2!1sen!2sin"],
     investment: "₹2Cr - ₹3Cr",
     revenue: "₹6Cr average annual turnover",
     employeeCount: "2-3 per location",
@@ -50,7 +50,7 @@ const franchiseData = {
     hero: "/brands/chhaswala.jpg",
     description: "India's fast growing dairy brand",
     yearsManaged: "5Months+",
-    locations: "1 location (Ahmedabad)",
+    locations: ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29373.62647752157!2d72.51418504520062!3d23.034663360732683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bee2a90484d%3A0x9bc1bd26afbe91fa!2sChhaswala-%20iscon!5e0!3m2!1sen!2sin!4v1737611567855!5m2!1sen!2sin"],
     investment: "₹150K - ₹350K",
     revenue: "₹1Cr average annual turnover",
     employeeCount: "2 per location",
@@ -65,7 +65,7 @@ const franchiseData = {
     description:
       "Pigeon is a Leader in cookware, home and kitchen appliances products across multiple categories",
     yearsManaged: "4Months+",
-    locations: "1 location",
+    locations: ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234941.68002458225!2d72.36730551315607!3d23.06179052057008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85630d30d745%3A0x5a43319ccb8facc9!2sPigeon%20Exclusive%20Store%20-%20Bhimjipura%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1737611903173!5m2!1sen!2sin"],
     investment: "₹500K - ₹550K",
     revenue: "₹1Cr average annual turnover",
     employeeCount: "3-4 per location",
@@ -76,10 +76,6 @@ const franchiseData = {
   },
 };
 
-const mapContainerStyle = {
-  width: "100%",
-  height: "400px",
-};
 
 function FranchisePage() {
   const { slugs } = useParams();
@@ -111,7 +107,7 @@ function FranchisePage() {
         </div>
         <div className="relative h-full flex items-center justify-center text-center">
           <div className="text-white px-4">
-            <h1 className="text-5xl tracking-[.1em] font-bold mb-4 uppercase text-blue-400">
+            <h1 className="text-5xl tracking-[.1em] font-bold mb-4 uppercase text-white">
               {franchise.name}
             </h1>
             <p className="text-xl max-w-2xl mx-auto">{franchise.description}</p>
@@ -149,20 +145,18 @@ function FranchisePage() {
       <div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Our Locations</h2>
         <div className="flex flex-col gap-4">
-          {franchise.locations.map((item, idx) => (
-            <>
-              <a href="https://www.google.com" rel="noreferrer" key={idx}>
-                <div className="bg-white p-4 rounded-lg shadow-md h-[50vh]" >
-                  <iframe
-                    src={item}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full"
-                  ></iframe>
-                </div>
-              </a>
-            </>
+          {franchise?.locations?.map((item, index) => (
+            <a href="https://www.google.com" rel="noreferrer" key={index}>
+              <div className="bg-white p-4 rounded-lg shadow-md h-[50vh]">
+                <iframe
+                  src={item}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </a>  
           ))}
         </div>
       </div>

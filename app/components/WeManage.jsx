@@ -5,28 +5,28 @@ const brands = [
   {
     name: "hocco eatery",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
+      "Our expertise in managing Hocco Eatery franchises showcases our ability to scale operations, maintain quality, and adapt to market trends. Let us bring the same success to your brand—partner with us to unlock your franchise potential!",
     imageUrl: "/brands/hocco-eatery.png",
     slug: "hoccoEatery"
   },
   {
     name: "hocco ice-cream distributor",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
+      "Our proven expertise in managing Hocco Ice-Cream distribution demonstrates our ability to handle temperature-sensitive products with precision. Partner with us to optimize your brand’s distribution network and achieve unparalleled operational excellence!",
     imageUrl: "/brands/hocco-ice-cream.jpg",
     slug: "hoccoIcecream"
   },
   {
     name: "chhaswala",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
+      "With Chhaswala reflects our ability to maintain product freshness, build customer loyalty, and scale operations seamlessly!",
     imageUrl: "/brands/chhaswala.jpg",
     slug: "chhaswala"
   },
   {
     name: "Pigeon Kitchenware",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, adipisci asperiores? Recusandae delectus ipsam deserunt at fuga pariatur, est rerum autem dolores corporis, obcaecati voluptate odio harum. Ex, facere quidem.",
+      "At Pigeon franchise, we showcases our ability to meet market demands while maintaining excellence. Collaborate with us to elevate your brand’s franchise operations to new heights!",
     imageUrl: "/brands/pigeon.jpg",
     slug: "pigeon"
   },
