@@ -10,6 +10,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function Footer() {
@@ -20,12 +21,13 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <a href="#">
               <div className="flex items-center">
-                <Building2 className="h-8 w-8 text-blue-600" />
+                {/* <Building2 className="h-8 w-8 text-blue-600" />
                 <span
                   className={`ml-2 text-xl font-bold hover:text-blue-600 text-black`}
                 >
                   H&S Franchise
-                </span>
+                </span> */}
+                <Image src="/logo.png?v1" alt="H&S franchise" width={120} height={120} className="object-contain"/>
               </div>{" "}
             </a>
 
