@@ -193,9 +193,9 @@ export default function AboutUs() {
               needs, contributing to our overall growth and market dominance.
             </p>
           </div>
-          <div className="block sm:hidden order-3">
+          {/* <div className="block sm:hidden order-3">
             <button className="primary-button">Know more</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
