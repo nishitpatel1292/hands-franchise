@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Building2, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,15 +33,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
+      className={`fixed w-full z-50 backdrop-blur-sm transition-colors duration-300 bg-white
+        ${
         isScrolled || isMenuOpen ? "bg-white" : "bg-transparent"
-      }`}
+      }`
+    }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href={'/'}>
+          <Link href={"/"}>
             <div className="flex items-center">
-              <Building2 className="h-8 w-8 text-blue-600" />
+              {/* <Building2 className="h-8 w-8 text-blue-600" />
               <span
                 className={`ml-2 text-xl font-bold hover:text-blue-600 ${
                   isScrolled
@@ -51,52 +54,62 @@ export default function Navbar() {
                 }`}
               >
                 H&S Franchise
-              </span>
+              </span> */}
+              <Image src="/logo.png?v1" alt="H&S franchise" width={120} height={120} className="object-contain"/>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href={'/#aboutus'}
-              className={` ${
-                isScrolled
-                  ? "text-black hover:text-blue-600"
-                  : "text-white hover:text-blue-600"
-              }`}
+              href={"/#aboutus"}
+              className="text-black hover:text-blue-600"
+              // className={` ${
+              //   isScrolled
+              //     ? "text-black hover:text-blue-600"
+              //     : "text-white hover:text-blue-600"
+              // }`}
             >
               About
             </Link>
             <Link
-              href={'/#contactus'}
-              className={`transition-colors ${
-                isScrolled
-                  ? "text-black hover:text-blue-600"
-                  : "text-white hover:text-blue-600"
-              }`}
+              href={"/#contactus"}
+              className="text-black hover:text-blue-600"
+              // className={`transition-colors ${
+              //   isScrolled
+              //     ? "text-black hover:text-blue-600"
+              //     : "text-white hover:text-blue-600"
+              // }`}
             >
               Contact
             </Link>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+            <button
+              onClick={() => {
+                window.location.hash = "#contactus";
+              }}
+              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            >
               Get Started
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex justify-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${
-                isScrolled ? "text-black" : ""
-              } hover:text-blue-600 transition-colors`}
+              className="text-black hover:text-blue-600"
+              // className={`${
+              //   isScrolled ? "text-black" : ""
+              // } hover:text-blue-600 transition-colors`}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6 text-black" />
               ) : (
                 <Menu
-                  className={`h-6 w-6 ${
-                    isScrolled ? "text-black" : "text-white"
-                  }`}
+                className="h-6 w-6 text-black"
+                  // className={`h-6 w-6 ${
+                  //   isScrolled ? "text-black" : "text-white"
+                  // }`}
                 />
               )}
             </button>
@@ -115,18 +128,23 @@ export default function Navbar() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
-              href={'/#aboutus'}
+              href={"/#aboutus"}
               className="block px-3 py-2 text-black hover:text-blue-600 transition-colors"
             >
               About
             </Link>
             <Link
-              href={'/#contactus'}
+              href={"/#contactus"}
               className="block px-3 py-2 text-black hover:text-blue-600 transition-colors"
             >
               Contact
             </Link>
-            <button className="w-full text-center bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+            <button
+              onClick={() => {
+                window.location.hash = "#contactus";
+              }}
+              className="w-full text-center bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            >
               Get Started
             </button>
           </div>

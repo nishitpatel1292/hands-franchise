@@ -7,7 +7,6 @@ import AboutUs from "@components/AboutUs";
 export default function Home() {
   return (
     <main className="relative">
-      <Navbar/>
       <Hero/>
       <AboutUs/>
       <WeManage/>

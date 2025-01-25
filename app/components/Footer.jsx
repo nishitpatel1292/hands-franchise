@@ -1,3 +1,5 @@
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Building2,
   Facebook,
@@ -43,16 +45,26 @@ export default function Footer() {
               <a
                 href="mailto:nishitp59@gmail.com"
                 className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
-                aria-label="Facebook"
+                aria-label="Email"
               >
                 <MailPlusIcon className="hover:text-blue-500 transition-transform transform hover:scale-110" />
               </a>
               <a
-                href="tel:+9313382301"
+                href="tel:+919825038257"
                 className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
-                aria-label="Facebook"
+                aria-label="Phone"
               >
                 <Phone className="hover:text-blue-500 transition-transform transform hover:scale-110" />
+              </a>
+              <a
+                href="https://wa.me/9825038257"
+                className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+                aria-label="Whatsapp"
+              >
+                <FontAwesomeIcon
+                  icon={faWhatsapp}
+                  className="text-[24px] hover:text-blue-500 transition-transform transform hover:scale-110"
+                />
               </a>
             </div>
           </div>
