@@ -104,9 +104,9 @@ export default function AboutUs() {
             {/* <p className="text-xl text-slate-400 leading-relaxed">
               Our diverse portfolio enables us to cater to a wide spectrum of customer needs while maintaining a cohesive and strategic business approach. We take immense pride in our ability to adapt swiftly to market trends and deliver unparalleled value to both our franchisees and customers.
             </p> */}
-            <button className="primary-button sm:block hidden">
+            {/* <button className="primary-button sm:block hidden">
               Know more
-            </button>
+            </button> */}
           </div>
           <div className="md:h-96 grid grid-cols-1 sm:grid-cols-2 about-us-figures-container">
             <div className="figure-card p-6 text-center">
