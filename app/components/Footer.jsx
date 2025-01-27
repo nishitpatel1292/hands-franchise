@@ -16,7 +16,7 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#e5e5e5] dark:bg-white">
+      <footer className="bg-[#f2f2f2]">
         <div className="container px-6 py-8 mx-auto">
           <div className="flex flex-col items-center text-center">
             <a href="#">

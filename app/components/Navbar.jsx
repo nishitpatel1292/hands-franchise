@@ -33,9 +33,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 backdrop-blur-sm transition-colors duration-300 bg-white
+      className={`fixed w-full z-50 backdrop-blur-sm transition-colors duration-300 bg-[#f2f2f2]
         ${
-        isScrolled || isMenuOpen ? "bg-white" : "bg-transparent"
+        isScrolled || isMenuOpen ? "bg-[#f2f2f2]" : "bg-transparent"
       }`
     }
     >
@@ -124,7 +124,7 @@ export default function Navbar() {
             isMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-full"
-          } bg-white`}
+          } bg-[#f2f2f2]`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
