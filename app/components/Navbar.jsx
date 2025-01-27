@@ -55,7 +55,7 @@ export default function Navbar() {
               >
                 H&S Franchise
               </span> */}
-              <Image src="/logo.png?v1" alt="H&S franchise" width={120} height={120} className="object-contain"/>
+              <Image src="/logo.png?v1" alt="H&S franchise" width={70} height={70} className="object-contain"/>
             </div>
           </Link>
 
