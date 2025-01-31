@@ -45,7 +45,7 @@ export default function Footer() {
             </p>
             <div className="flex mt-3 sm:mb-2 -mx-2 order-1 sm:order-2">
               <a
-                href="mailto:nishitp59@gmail.com"
+                href="mailto:handsfranchise@gmail.com"
                 className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
                 aria-label="Email"
               >
