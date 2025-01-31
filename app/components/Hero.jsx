@@ -2,8 +2,16 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import VideoSlider from './VideoSlider';
-
+import { useHandleRedirectSection } from '@/utils/handleRedirectSection';
 export default function Hero() {
+  // const handleButtonClick = () =>{
+  //   const contactSection = document.getElementById('contactus');
+  //   if(contactSection){
+  //     contactSection.scrollIntoView({behavior: "smooth"})
+  //   }
+  // };
+  const handleRedirectSection = useHandleRedirectSection();
+
   return (
     <div className="relative min-h-screen flex items-center justify-center hero-section">
       <VideoSlider />
@@ -16,7 +24,7 @@ export default function Hero() {
           Expert guidance and innovative solutions to help you build, grow, and manage successful franchise networks.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onClick={()=>{window.location.hash = '#contactus'}} className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
+          <button onClick={()=>{handleRedirectSection('contactus')}} className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
             Start Your Journey
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
