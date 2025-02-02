@@ -14,7 +14,7 @@ const videos = [
   '/videos/hocco-eatery.mp4',
 ];
 
-export default function VideoSlider2() {
+export default function VideoSlider({onLoadedData}) {
   const swiperRef = useRef(null);
   const pagination = {
     clickable: true,
@@ -67,6 +67,7 @@ export default function VideoSlider2() {
                   muted
                   disablePictureInPicture
                   onEnded={()=>{handleVideoEnd()}}
+                  onLoadedData={onLoadedData}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/20 z-10" />
