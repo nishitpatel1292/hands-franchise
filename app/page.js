@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WeManage from "@components/WeManage";
 import ContactUs from "@components/ContactUs";
